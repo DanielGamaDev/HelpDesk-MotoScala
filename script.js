@@ -58,7 +58,7 @@ document
   try{
 
     // URL DA API APPS SCRIPT
-    const response = await fetch("COLE_SUA_URL_AQUI", {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbxGvzgRVF0EyC7sEguHjgIbYQbNT3GDasuOezLnqgg-ECz-iXHCa2i9ZyYSxh4wl76mWg/exec", {
 
       method:"POST",
 
