@@ -5,24 +5,43 @@ const senhaTI = "258852"
 
 // LOGIN
 
-function entrarSistema(){
+function entrarSistema() {
 
-  const senha = document.getElementById("senha").value
+  const senha =
+    document.getElementById("senha").value
 
-  const erro = document.getElementById("erro")
+  const erro =
+    document.getElementById("erro")
 
-  if(
-    senha === senhaUsuario ||
-    senha === senhaTI
-  ){
+  // USUÁRIO COMUM
+
+  if (senha === senhaUsuario) {
+
+    localStorage.setItem("tipoUsuario", "user")
 
     document.getElementById("loginArea")
-    .style.display = "none"
+      .style.display = "none"
 
     document.getElementById("sistema")
-    .style.display = "block"
+      .style.display = "block"
 
-  }else{
+  }
+
+  // TI
+
+  else if (senha === senhaTI) {
+
+    localStorage.setItem("tipoUsuario", "ti")
+
+    document.getElementById("loginArea")
+      .style.display = "none"
+
+    document.getElementById("sistema")
+      .style.display = "block"
+
+  }
+
+  else {
 
     erro.innerText = "Senha inválida"
 
@@ -33,54 +52,65 @@ function entrarSistema(){
 // FORMULÁRIO
 
 document
-.getElementById("ticketForm")
-.addEventListener("submit", async function(e){
+  .getElementById("ticketForm")
+  .addEventListener("submit", async function (e) {
 
-  e.preventDefault()
+    e.preventDefault()
 
-  const btn =
-  document.getElementById("btnEnviar")
+    const btn =
+      document.getElementById("btnEnviar")
 
-  btn.disabled = true
-  btn.innerText = "Enviando..."
+    btn.disabled = true
+    btn.innerText = "Enviando..."
 
-  const dados = {
+    const dados = {
 
-    titulo: this.titulo.value,
-    descricao: this.descricao.value,
-    nome: this.nome.value,
-    setor: this.setor.value,
-    urgencia: this.urgencia.value,
-    importancia: this.importancia.value
+      titulo: this.titulo.value,
+      descricao: this.descricao.value,
+      nome: this.nome.value,
+      setor: this.setor.value,
+      urgencia: this.urgencia.value,
+      importancia: this.importancia.value
 
-  }
+    }
 
-  try{
+    try {
 
-    // URL DA API APPS SCRIPT
-    const response = await fetch("https://script.google.com/macros/s/AKfycbxGvzgRVF0EyC7sEguHjgIbYQbNT3GDasuOezLnqgg-ECz-iXHCa2i9ZyYSxh4wl76mWg/exec", {
+      // SUA URL APPS SCRIPT
 
-      method:"POST",
+      const response = await fetch(
+        "COLE_SUA_URL_AQUI",
+        {
+          method: "POST",
+          body: JSON.stringify(dados)
+        }
+      )
 
-      body: JSON.stringify(dados)
+      const resultado =
+        await response.json()
 
-    })
+      alert(resultado.message)
 
-    const resultado = await response.json()
+      this.reset()
 
-    alert(resultado.message)
+    } catch (error) {
 
-    this.reset()
+      alert("Erro ao enviar ticket")
 
-  }catch(error){
+      console.error(error)
 
-    alert("Erro ao enviar ticket.")
+    }
 
-    console.error(error)
+    btn.disabled = false
+    btn.innerText = "Abrir Ticket"
 
-  }
+  })
 
-  btn.disabled = false
-  btn.innerText = "Abrir Ticket"
+// IR PARA CHAMADOS
 
-})
+function irParaChamados() {
+
+  window.location.href =
+    "chamados.html"
+
+}

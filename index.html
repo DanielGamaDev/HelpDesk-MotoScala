@@ -60,11 +60,13 @@
 
           <select name="setor" required>
             <option value="">Selecione</option>
+            <option>Vendas</option>
             <option>Financeiro</option>
             <option>RH</option>
-            <option>Comercial</option>
-            <option>Estoque</option>
-            <option>TI</option>
+            <option>Gerência</option>
+            <option>Administrativo</option>
+            <option>Oficina</option>
+            <option>Peças</option>
             <option>Outro</option>
           </select>
 
@@ -96,6 +98,10 @@
 
         <button type="submit" id="btnEnviar">
           Abrir Ticket
+        </button>
+
+        <button type="button" class="btn-chamados" onclick="irParaChamados()">
+          Ver Chamados
         </button>
 
       </form>
