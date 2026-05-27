@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chamados - HELP DESK</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container chamados-container">
+
+        <div class="header">
+
+            <h1>Chamados</h1>
+
+            <p>
+                Painel de gerenciamento
+            </p>
+
+        </div>
+
+        <div class="acoes-topo">
+
+            <button onclick="carregarChamados()">
+                Atualizar
+            </button>
+
+            <button onclick="voltarInicio()">
+                Voltar
+            </button>
+
+        </div>
+
+        <div class="tabela-area">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Título</th>
+                        <th>Nome</th>
+                        <th>Setor</th>
+                        <th>Prioridade</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="ticketsBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>F

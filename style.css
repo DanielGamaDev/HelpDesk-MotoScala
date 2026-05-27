@@ -159,6 +159,125 @@ button {
 
 }
 
+/* CHAMADOS */
+
+.chamados-container {
+
+  max-width: 1200px;
+
+}
+
+/* AÇÕES TOPO */
+
+.acoes-topo {
+
+  display: flex;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+}
+
+.acoes-topo button {
+
+  width: auto;
+
+  padding: 12px 20px;
+
+}
+
+/* TABELA */
+
+.tabela-area {
+
+  overflow-x: auto;
+
+}
+
+table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: white;
+
+}
+
+thead {
+
+  background: #dc2626;
+
+  color: white;
+
+}
+
+th,
+td {
+
+  padding: 14px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  text-align: left;
+
+}
+
+tr:hover {
+
+  background: #f9fafb;
+
+}
+
+/* STATUS */
+
+.status {
+
+  padding: 6px 10px;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+}
+
+.em-espera {
+
+  background: #d1d5db;
+
+}
+
+.em-andamento {
+
+  background: #93c5fd;
+
+}
+
+.finalizado {
+
+  background: #86efac;
+
+}
+
+.rejeitado {
+
+  background: #fca5a5;
+
+}
+
+/* SELECT STATUS */
+
+.status-select {
+
+  padding: 8px;
+
+  border-radius: 6px;
+
+}
+
 /* BOTÃO CHAMADOS */
 
 .btn-chamados {
