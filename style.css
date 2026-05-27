@@ -224,7 +224,7 @@ td {
 
 }
 
-tr:hover {
+tbody tr:hover {
 
   background: #f9fafb;
 
